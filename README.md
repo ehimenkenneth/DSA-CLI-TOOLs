@@ -15,8 +15,8 @@ A simple Python command-line toolkit featuring a Fibonacci sequence generator an
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com<your-username>/<repo-name>.git
-   cd <repo-name>
+   git clone https://github.com/ehimenkenneth/DSA-CLI-TOOLs.git
+   cd DSA-CLI-TOOLs
    ```
 2. *(Optional)* Set up a virtual environment if you add external packages later:
    ```bash
