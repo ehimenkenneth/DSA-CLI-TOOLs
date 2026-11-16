@@ -54,7 +54,7 @@ def view_note():
     print(read_note())
 
 def save_note(dictionary):
-    with open("json_file_practice.json", mode="w", encoding="utf-8") as writefile:
+    with open("json_file_practice.json", mode="a", encoding="utf-8") as writefile:
          json.dump(dictionary, writefile, indent=4)
 def read_note():
     with open("json_file_practice.json", mode="r", encoding="utf-8") as readfile:
