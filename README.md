@@ -1,48 +1,57 @@
-# Fibonacci Sequence Generator
+# Group CLI Toolkit
 
-A lightweight Python command-line tool that generates a 12-number Fibonacci sequence starting from any two integers provided by the user.
+A simple Python command-line toolkit featuring a Fibonacci sequence generator and a JSON-based note manager.
 
-## Features
-* **Custom Starting Points:** Generates a Fibonacci sequence from any two valid integers you enter.
-* **Input Validation:** Ensures the input contains a comma, checks that exactly two values are provided, and prevents crashes from non-numeric entries.
-* **Recursive Calculation:** Uses a clean recursive function to compute and print the first 12 numbers in the sequence.
+## 🛠️ Included Tools
 
-## Prerequisites
-* **Python 3.x** (No external libraries required—uses built-in Python features only).
+- **Fibonacci CLI (`fib.py`):** Generates Fibonacci numbers from the command line.
+- **Note Manager (`note.py`):** Reads, writes, and manages quick notes saved locally in a JSON file.
 
-## Installation & Setup
-1. Clone this repository to your local machine:
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.x installed on your machine.
+
+### Installation
+1. Clone the repository:
    ```bash
-   git clone git@github.com:yourusername/your-repo-name.git
+   git clone https://github.com<your-username>/<repo-name>.git
+   cd <repo-name>
    ```
-2. Navigate into the project directory:
+2. *(Optional)* Set up a virtual environment if you add external packages later:
    ```bash
-   cd your-repo-name
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
    ```
 
-## Usage
-Run the script from your terminal (replace `fibonacci.py` with your actual filename):
+## 💻 Usage
+
+### Fibonacci Tool
+Run the script to generate Fibonacci numbers:
 ```bash
-python fibonacci.py
+python fib.py 10
 ```
 
-### Example Output
-```text
-FIBONACCI NUMBERS
-enter two numbers which you want to see the fibonacci numbers of(separate number by ','): 0, 1
-0
-1
-1
-2
-3
-5
-8
-13
-21
-34
-55
-89
+### Note Tool
+Read or add notes stored in JSON:
+```bash
+# Write a new note
+python note.py add "Finish the CLI README"
+
+# Read all saved notes
+python note.py list
 ```
+*(Update the flags/arguments above to match how your scripts currently take inputs.)*
+
+## 👥 Team
+- **Member 1** – [@github-handle](https://github.comgithub-handle)
+- **Member 2** – [@github-handle](https://github.comgithub-handle)
+- **Member 3** – [@github-handle](https://github.comgithub-handle)
+
+## 🤝 Contributing
+1. Pull the latest changes (`git pull origin main`).
+2. Create a branch for your feature (`git checkout -b add-new-tool`).
+3. Commit and push your code, then open a Pull Request.
 
 ## How It Works
 1. The program prompts the user to enter two comma-separated integers (for example, `0, 1` or `5, 8`).
