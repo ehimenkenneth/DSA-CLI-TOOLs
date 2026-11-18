@@ -13,17 +13,33 @@ def note():
                print("invalid input")
                continue
 
-          if what_user == "w":
-               dictionary = take_notes()
-               item = load_note()
-               item.append(dictionary)
-               save_note(item)
-          elif what_user == "v":
-               view_note()
-          elif what_user == "d":
-               pass
           else:
-               break
+               if what_user == "w":
+                    dictionary = take_notes()
+                    item = load_note()
+                    item.append(dictionary)
+                    save_note(item)
+               elif what_user == "v":
+                    view_note()
+               elif what_user == "d":
+                    returned = load_note()
+                    if len(returned) < 1:
+                              print("no item in note pad, use 'w' to make a new note")
+                              continue
+                    try:
+                         view_note()
+                         user_del = int(input("Enter number you want to delete: "))
+                         
+                         if user_del > len(returned):
+                              print("you have exceeded range")
+                              continue
+                         else:
+                              delete_note(user_del)
+                              print("delete successful")
+                    except ValueError:
+                         print("invalid input")
+               else:
+                    break
 
 def take_notes():
 
@@ -51,9 +67,23 @@ def take_notes():
 def view_note():
      try:
           returned_json = load_note()
-          print(returned_json)
+
+          i = 0
+          for note in returned_json:
+               i += 1
+               print(f"{i}.")
+               for key, value in note.items():
+
+                    print(f"{key}:{value}")
      except json.decoder.JSONDecodeError:
           print("file is empty")
+
+def delete_note(note_num):
+     returned = load_note()
+     
+     returned.pop(note_num - 1)
+
+     save_note(returned)
 
 def save_note(dictionary):
     with open(path, mode="w", encoding="utf-8") as writefile:
